@@ -343,6 +343,25 @@ textarea {
     color: white;
   }
 
+  button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e7cc2;
+  }
+
 @media (min-width: 810px) and (max-width: 1199px) {
     .container {
         max-width: 600px;
