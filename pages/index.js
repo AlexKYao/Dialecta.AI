@@ -7,6 +7,8 @@ import React from 'react';
 import { FeedbackFish } from '@feedback-fish/react'
 
 const Home = () => {
+  const projectId = '4f2e3d1f702689';
+  
   // Single Language Selection
   const [selectedLanguage, setSelectedLanguage] = useState('');
   
@@ -73,7 +75,7 @@ const Home = () => {
   };
 
   return (
-    <><div className="root">
+    <div className="root">
       <div className="container">
         <div className="header">
           <div className="header-title">
@@ -131,10 +133,8 @@ const Home = () => {
           )}
         </div>
       </div>
+      <FeedbackFish projectId={projectId}><NavButton>Send feedback</NavButton></FeedbackFish>
     </div>
-      <FeedbackFish projectId="4f2e3d1f702689">
-        <NavButton>Send feedback</NavButton>
-      </FeedbackFish></>
   
   );
 };
