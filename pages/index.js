@@ -4,6 +4,7 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import { useState } from 'react';
 import React from 'react';
+import { FeedbackFish } from '@feedback-fish/react'
 
 const Home = () => {
   // Single Language Selection
@@ -72,65 +73,69 @@ const Home = () => {
   };
 
   return (
-    <div className="root">
+    <><div className="root">
       <div className="container">
         <div className="header">
           <div className="header-title">
             <h1>Generate sentences about any topic or interest in your target language</h1>
           </div>
         </div>
-        
+
 
         <div className="prompt-container">
 
-        <div className="header-subtitle">
+          <div className="header-subtitle">
             <h2>1. Choose your Target Language</h2>
           </div>
-        <div className='dropdown-container'>
-          <select value={selectedLanguage} onChange={handleLanguageChange}>
-            <option value="English">English</option>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-            <option value="German">German</option>
-            <option value="Dutch">Dutch</option>
-            <option value="Italian">Italian</option>
-          </select>
-          {/* <p>Selected Language: {selectedLanguage}</p> */}
-        </div>
-           <div className="header-subtitle">
+          <div className='dropdown-container'>
+            <select value={selectedLanguage} onChange={handleLanguageChange}>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Dutch">Dutch</option>
+              <option value="Italian">Italian</option>
+            </select>
+            {/* <p>Selected Language: {selectedLanguage}</p> */}
+          </div>
+          <div className="header-subtitle">
             <h2>2. Type in the topic or interest</h2>
           </div>
           <textarea placeholder="start typing here" className="prompt-box" value={userInput}
-          onChange={onUserChangedText}/>
+            onChange={onUserChangedText} />
           <div className="prompt-buttons">
-          <a className="generate-button" className={isGenerating ? 'generate-button loading' : 'generate-button'} 
-            onClick={callGenerateEndpoint}
-          >
-            <div className="generate"> 
-              {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
-            </div>
-          </a>
-        </div>
-        {apiOutput && (
-          <div className="output">
-            <div className="output-header-container">
-              <div className="output-header">
-                <h3>Output</h3>
+            <a className="generate-button" className={isGenerating ? 'generate-button loading' : 'generate-button'}
+              onClick={callGenerateEndpoint}
+            >
+              <div className="generate">
+                {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
               </div>
-            </div>
-            <div className="output-content">
-              
-              <div className='output-table'>
-                {parseTable(apiOutput)}
-              </div>
-
-              <p>{apiOutput}</p>
-            </div>
+            </a>
           </div>
-        )}
+          {apiOutput && (
+            <div className="output">
+              <div className="output-header-container">
+                <div className="output-header">
+                  <h3>Output</h3>
+                </div>
+              </div>
+              <div className="output-content">
+
+                <div className='output-table'>
+                  {parseTable(apiOutput)}
+                </div>
+
+                <p>{apiOutput}</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
+      <FeedbackFish projectId="4f2e3d1f702689">
+        <NavButton>Send feedback</NavButton>
+      </FeedbackFish></>
+  
   );
 };
 
