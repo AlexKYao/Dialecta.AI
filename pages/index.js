@@ -133,7 +133,9 @@ const Home = () => {
           )}
         </div>
       </div>
-      <FeedbackFish projectId={projectId}><button>Send feedback</button></FeedbackFish>
+      <FeedbackForm triggerComponent={Button}
+        projectId={projectId}
+      />
     </div>
   
   );
