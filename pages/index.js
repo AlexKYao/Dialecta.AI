@@ -133,7 +133,7 @@ const Home = () => {
           )}
         </div>
       </div>
-      <FeedbackFish projectId={projectId}><NavButton>Send feedback</NavButton></FeedbackFish>
+      <FeedbackFish projectId={projectId}><button>Send feedback</button></FeedbackFish>
     </div>
   
   );
